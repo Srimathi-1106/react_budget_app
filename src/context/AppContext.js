@@ -24,7 +24,8 @@ export const AppReducer = (state, action) => {
                 return {
                     ...state,
                 };
-            } else {
+            } 
+            else {
                 alert("Cannot increase the allocation! Out of funds");
                 return {
                     ...state
@@ -60,7 +61,7 @@ export const AppReducer = (state, action) => {
         case 'SET_BUDGET':
             action.type = "DONE";
             state.budget = action.payload;
-
+            
             return {
                 ...state,
             };
@@ -112,8 +113,8 @@ export const AppProvider = (props) => {
                 expenses: state.expenses,
                 budget: state.budget,
                 remaining: remaining,
+                currency: state.currency,
                 dispatch,
-                currency: state.currency
             }}
         >
             {props.children}
